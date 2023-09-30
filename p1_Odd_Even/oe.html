@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Odd Even Finder</title>
+		<style>
+			*{font-size : 50px; font-family : "Courier";}
+			body{background-color : cyan;}
+		</style>
+		<script>
+			function find()
+			{
+				event.preventDefault();
+				let num = document.getElementById("num");
+				let ans = document.getElementById("ans");
+				if(num.value.length == 0)
+				{
+					alert("please enter something");
+					num.focus();
+					ans.innerHTML = "";
+					return;
+				}
+				let n = parseInt(num.value);
+				let r = n % 2 == 0 ? "Even" : "Odd";
+				let msg = "Result = " + r;
+				ans.innerHTML = msg;
+			}
+		</script>
+
+	</head>
+	<body>
+	<center>
+		<h1>Odd Even Finder</h1>
+		<form onsubmit = "return find()">
+			<input type = "number" placeholder = "enter number" id = "num"></input>
+			<br></br>
+			<input type = "Submit" value = "Find"></input>
+			<br></br>
+		</form>
+		<h1 id = "ans"></h1>
+	</center>
+	</body>
+</html>
